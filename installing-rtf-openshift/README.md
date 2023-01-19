@@ -48,3 +48,14 @@ into your openshift cluster, modify the hostname by providing appropriate value 
 10. Associate the Runtime Fabric to the appropriate environments 
 
 <img width="1615" alt="image" src="https://user-images.githubusercontent.com/19476054/213525727-e7c31c32-28ba-4cc7-97d6-884bfe136e07.png">
+
+
+
+# Deploying application onto Runtime Fabric RTF on OpenShift
+
+
+Make sure that the target environment is the RTF created on OpenShift
+
+
+
+<img width="1791" alt="image" src="https://user-images.githubusercontent.com/19476054/213527787-fff258fd-4e57-4051-99d6-2ad406b8a3e5.png">
