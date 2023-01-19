@@ -3,7 +3,6 @@
 
 
 
-### Set Up 
 
 1. Follow the instructions listed on https://anypoint.mulesoft.com/cloudhub/#/console/home/runtimefabrics/list
    Create a Runtime Fabric by selecting "OpenShift" as the installation platform. Once done, you will see a page which lists out steps to be followed like the below
@@ -50,6 +49,13 @@ into your openshift cluster, modify the hostname by providing appropriate value 
 <img width="1615" alt="image" src="https://user-images.githubusercontent.com/19476054/213525727-e7c31c32-28ba-4cc7-97d6-884bfe136e07.png">
 
 
+### Troubleshooting RTF installation
+
+Couldn’t validate license key!
+
+<img width="784" alt="image" src="https://user-images.githubusercontent.com/19476054/213553904-56e21751-fb2d-426f-b924-830438d06238.png">
+
+If you run into the above issue, Go to the RuntimeFabric Instance yaml file and make sure that the license value in the yaml matches the base64 encoded value of the mulesoft license
 
 # Deploying application onto Runtime Fabric RTF on OpenShift
 
