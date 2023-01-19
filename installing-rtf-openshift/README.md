@@ -42,4 +42,9 @@
  
  <img width="1590" alt="image" src="https://user-images.githubusercontent.com/19476054/213523867-17c6ad60-8874-405e-82a1-d85abcd3498a.png">
 
+9. Copy the ingress template yaml in https://github.com/gskumar1010/mule-rtf-openshift/blob/main/installing-rtf-openshift/mule-rtf-ingress-template.yml 
+into your openshift cluster, modify the hostname by providing appropriate value and create the ingress. 
 
+10. Associate the Runtime Fabric to the appropriate environments 
+
+<img width="1615" alt="image" src="https://user-images.githubusercontent.com/19476054/213525727-e7c31c32-28ba-4cc7-97d6-884bfe136e07.png">
