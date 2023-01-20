@@ -19,7 +19,7 @@
         oc adm policy add-scc-to-user anyuid -z sa-with-anyuid
        
        
- 5. Before creating the RTF instance, create a Service account which can be used for running the RTF instance 
+ 5. Before creating the RTF instance, generate the base64 encoded format of the license from the enterprise mule license file. 
 
         base64 -i license_rh_org.lic > output.txt
         
