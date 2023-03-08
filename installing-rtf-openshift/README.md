@@ -12,7 +12,7 @@
          --docker-password=<fill-in-the-value-provided-on-rtf-page>
         
 2. In the OpenShift console, navigate to Operators –> OperatorHub. Search for **runtime fabric operator.** Install it
-3. Once the Operator has been installed, navigate to the rtf namespace which was created earlier. The RTF instance will be created in this namespace
+3. Once the Operator has been installed, navigate to the **rtf namespace** which was created earlier. The RTF instance will be created in this namespace
 4. Before creating the RTF instance, create a Service account which can be used for running the RTF instance 
  
         oc create  sa sa-with-anyuid
