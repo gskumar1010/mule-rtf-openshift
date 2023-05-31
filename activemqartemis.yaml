@@ -1,0 +1,20 @@
+﻿apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: ex-aao
+  namespace: amq-broker
+spec:
+  acceptors:
+    - connectionsAllowed: 25
+      name: amqp
+      port: 5672
+      protocols: 'amqp,openwire'
+  deploymentPlan:
+    image: placeholder
+    jolokiaAgentEnabled: false
+    journalType: nio
+    managementRBACEnabled: true
+    messageMigration: false
+    persistenceEnabled: false
+    requireLogin: false
+    size: 1
