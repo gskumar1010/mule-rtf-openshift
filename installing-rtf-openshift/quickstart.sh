@@ -42,7 +42,8 @@ oc adm policy add-scc-to-user anyuid -z sa-with-anyuid
 
 base64 -i /tmp/license_rh_org.lic > $HOME/output.txt
 
-yq e -i  '.metadata.namespace = "'$projectname'"' installing-rtf-openshift/configs/runtimefabric.yaml > $HOME/runtimefabric.yaml
+cp installing-rtf-openshift/configs/runtimefabric.yaml $HOME/runtimefabric.yaml
+yq e -i  '.metadata.namespace = "'$projectname'"' $HOME/runtimefabric.yaml
 yq e -i  '.spec.activationData = "'$activationdata'"' $HOME/runtimefabric.yaml
 item="$(< $HOME/output.txt)" yq e -i '.spec.muleLicense = env(item)' $HOME/runtimefabric.yaml
 cat $HOME/runtimefabric.yaml
