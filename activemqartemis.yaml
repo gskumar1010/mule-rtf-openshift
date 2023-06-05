@@ -18,3 +18,5 @@ spec:
     persistenceEnabled: false
     requireLogin: false
     size: 1
+  adminPassword: admin
+  adminUser: admin
