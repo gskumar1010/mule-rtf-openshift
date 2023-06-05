@@ -45,5 +45,5 @@ spec:
     mule:
       disablePerAppSA: false
     authorizedNamespaces: false
-  activationData: rfe
+  activationData: CHANGEME
   muleLicense: CHANGEME
