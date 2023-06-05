@@ -20,3 +20,5 @@ spec:
     size: 1
   adminPassword: admin
   adminUser: admin
+  console:
+    expose: true
