@@ -3,7 +3,7 @@
 This guide provides instructions for setting up a Runtime Fabric (RTF) on OpenShift. It includes both automated steps using provided scripts and manual steps to be followed. RTF is a deployment option for Mule runtimes that allows you to run Mule applications in a self-managed infrastructure.
 
 ## Automated Steps 
-`TO-DO automate AMQ Deployment`
+`TO-DO automate AMQ Deployment`  
 Before proceeding with the automated steps, make sure you meet the following prerequisites:
 - An active OpenShift cluster
 - OpenShift CLI installed and configured
