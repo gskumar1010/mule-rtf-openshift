@@ -1,8 +1,31 @@
 # Creating Runtime Fabric RTF on OpenShift
 
+## Automated Steps
+### Prerequisites
+1. OpenShift cluster is up and running
+2. OpenShift CLI is installed
+3. OpenShift CLI is configured to point to the OpenShift cluster
+4. OpenShift CLI is logged in as a user who has cluster-admin role
+5. Runtime Fabric Operator is installed in the OpenShift cluster
+6. license_rh_org.lic  is downloaded from https://anypoint.mulesoft.com/ and is available in the local machine 
+   1. `scp ~/Downloads/license_rh_org.lic   admin@sample.jumpbox.com:/tmp`
+7. git is installed in the local machine
 
+### Quickstart Script 
+```
+curl -OL https://raw.githubusercontent.com/tosin2013/mule-rtf-openshift/main/installing-rtf-openshift/quickstart.sh
+chmod +x quickstart.sh
+./quickstart.sh
+```
 
+### Clean up script
+```
+curl -OL https://raw.githubusercontent.com/tosin2013/mule-rtf-openshift/main/installing-rtf-openshift/cleanup-env.sh
+chmod +x cleanup-env.sh
+./cleanup-env.sh
+```
 
+## Manual Steps
 
 1. Follow the instructions listed on https://anypoint.mulesoft.com/cloudhub/#/console/home/runtimefabrics/list
    Create a Runtime Fabric by selecting "OpenShift" as the installation platform. Once done, you will see a page which lists out steps to be followed like the below
