@@ -1,0 +1,49 @@
+apiVersion: rtf.operators.mulesoft.com/v1
+kind: RuntimeFabric
+metadata:
+  name: runtime-fabric
+  namespace: CHANGEME
+spec:
+  agent:
+    app:
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 500Mi
+        requests:
+          cpu: 100m
+          memory: 200Mi
+    rtfd:
+      resources:
+        limits:
+          cpu: 50m
+          memory: 50Mi
+        requests:
+          cpu: 20m
+          memory: 50Mi
+  global:
+    cluster:
+      flavor: byok
+      type: openshift
+    containerLogPaths:
+      - /var/lib/docker/containers
+      - /var/log/containers
+      - /var/log/pods
+    crds:
+      install: true
+    deployment:
+      nodeSelector: ''
+    image:
+      provider: aws
+      pullSecretName: rtf-pull-secret
+      rtfRegistry: rtf-runtime-registry.kprod.msap.io
+    logForwarding:
+      anypointMonitoring: false
+    core:
+      affinity: {}
+      tolerations: []
+    mule:
+      disablePerAppSA: false
+    authorizedNamespaces: false
+  activationData: rfe
+  muleLicense: CHANGEME
