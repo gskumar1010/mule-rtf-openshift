@@ -18,6 +18,13 @@ chmod +x quickstart.sh
 ./quickstart.sh
 ```
 
+### Deploy Application 
+```
+oc apply -k amq-broker-operator/operator/overlays/7.11.x
+oc new-project amq-broker
+oc apply -f activemqartemis.yaml
+```
+
 ### Clean up script
 ```
 curl -OL https://raw.githubusercontent.com/tosin2013/mule-rtf-openshift/main/installing-rtf-openshift/cleanup-env.sh
@@ -88,3 +95,22 @@ Make sure that the target environment is the RTF created on OpenShift
 
 
 <img width="1791" alt="image" src="https://user-images.githubusercontent.com/19476054/213527787-fff258fd-4e57-4051-99d6-2ad406b8a3e5.png">
+
+**confirm Host endpoint is correct**
+![20230606124535](https://i.imgur.com/P88tknU.png)
+**Update Properties vaule**
+1. http.port=8081 
+2. jms.broker.url=tcp://ex-aao-amqp-0-svc.amq-broker.svc.cluster.local:5672
+3. jms.username=admin
+4. jms.password=admin
+
+![20230606124427](https://i.imgur.com/e6Ks2ff.png)
+
+Test the mulesoft endpoint 
+```
+$ python3 test-mulesoft.py                                                                                                                                 12:52:23 PM
+How many times would you like to post? 10
+What is the post url? http://test-application.router-internal-default.apps.ocp4.example.com/
+Product posted successfully.
+Posted at Tue Jun  6 12:53:40 2023
+```

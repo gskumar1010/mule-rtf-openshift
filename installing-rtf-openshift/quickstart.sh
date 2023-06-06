@@ -49,3 +49,11 @@ item="$(< $HOME/output.txt)" yq e -i '.spec.muleLicense = env(item)' $HOME/runti
 cat $HOME/runtimefabric.yaml
 sleep 5s
 oc apply -f $HOME/runtimefabric.yaml
+cp installing-rtf-openshift/mule-rtf-ingress-template.yml $HOME/mule-rtf-ingress-template.yml
+
+url=$(oc whoami --show-console)
+extracted=$(echo "$url" | sed -E 's/.*apps\.(.*)/\1/'); echo "Extracted value: apps.$extracted"
+
+route_info=app-name.router-internal-default.apps.$extracted
+yq eval -i  '.spec.rules[0].host = "'$route_info'"' installing-rtf-openshift/mule-rtf-ingress-template.yml
+oc create -f installing-rtf-openshift/mule-rtf-ingress-template.yml
