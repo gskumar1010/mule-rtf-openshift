@@ -18,6 +18,13 @@ chmod +x quickstart.sh
 ./quickstart.sh
 ```
 
+### Deploy Application 
+```
+oc apply -k amq-broker-operator/operator/overlays/7.11.x
+oc new-project amq-broker
+oc apply -f activemqartemis.yaml
+```
+
 ### Clean up script
 ```
 curl -OL https://raw.githubusercontent.com/tosin2013/mule-rtf-openshift/main/installing-rtf-openshift/cleanup-env.sh
