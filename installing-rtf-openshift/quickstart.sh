@@ -55,4 +55,5 @@ url=$(oc whoami --show-console)
 extracted=$(echo "$url" | sed -E 's/.*apps\.(.*)/\1/'); echo "Extracted value: apps.$extracted"
 
 route_info=app-name.router-internal-default.apps.$extracted
-yq eval '.spec.rules[0].host = "'$route_info'"' installing-rtf-openshift/mule-rtf-ingress-template.yml
+yq eval -i  '.spec.rules[0].host = "'$route_info'"' installing-rtf-openshift/mule-rtf-ingress-template.yml
+oc create -f installing-rtf-openshift/mule-rtf-ingress-template.yml
