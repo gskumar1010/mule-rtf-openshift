@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+  haproxy.router.openshift.io/rewrite-target: /
+  name: rtf-ingress
+  namespace: rtf
+  labels:
+    mule-environment: environment-id
+    mule-business-group: business-group-id
+spec:
+  ingressClassName: rtf-openshift-default
+  rules:
+  # host: app-name.router-internal-default.<value specific to your openshift cluster>  - please modify this appropriate to your environment
+  - host: router-internal-default.apps.muledemo2.sandbox.test.com
+    http:
+      paths:
+        - path: /app-name
+          pathType: Prefix
+          backend:
+            service:
+              name: service
+              port:
+                number: 80
